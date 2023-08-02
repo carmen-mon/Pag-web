@@ -1,0 +1,102 @@
+:root {
+  --bar-background-color: #678B9E;
+  --dropdown-background-color: #B3E2E9;
+  --highlight-color: #F7DC6F;
+  --hover-color: #F9E79F;
+  --font-family: "Courier New", monospace;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.search-bar {
+  background-color: var(--bar-background-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+}
+
+.navMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navMenu a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease;
+  font-family: var(--font-family);
+}
+
+.navMenu li {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--dropdown-background-color);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  font-family: var(--font-family);
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Efecto de iluminación al hacer clic */
+.navMenu a:active {
+  background-color: var(--highlight-color);
+}
+
+/* Efecto de iluminación al acercar el mouse (hover) */
+.navMenu a:hover {
+  background-color: var(--hover-color);
+}
+
+/* Ajuste para responsive design */
+@media screen and (max-width: 768px) {
+  .navMenu {
+    display: block;
+  }
+
+  .navMenu li {
+    display: block;
+  }
+
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content a {
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .dropdown:hover .dropdown-content a {
+    display: block;
+  }
+}
